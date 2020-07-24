@@ -1,0 +1,26 @@
+CREATE TABLE public.tyc_pex_exec_tab
+(
+    sequenceno numeric(19,0) NOT NULL,
+    starttime timestamp without time zone,
+    endtime timestamp without time zone,
+    name character varying(120) COLLATE pg_catalog."default",
+    remark character varying(400) COLLATE pg_catalog."default",
+    notifier character varying(128) COLLATE pg_catalog."default" NOT NULL,
+    deviceid character varying(80) COLLATE pg_catalog."default" NOT NULL,
+    result character varying(16) COLLATE pg_catalog."default",
+    content character varying(2000) COLLATE pg_catalog."default",
+    datastatus numeric(1,0),
+    updatetime timestamp without time zone,
+    description character varying(200) COLLATE pg_catalog."default",
+    policyid character varying(40) COLLATE pg_catalog."default",
+    title character varying(40) COLLATE pg_catalog."default",
+    logmode character varying(20) COLLATE pg_catalog."default",
+    CONSTRAINT tyc_pex_exec_tab_pkey PRIMARY KEY (sequenceno, notifier, deviceid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tyc_pex_exec_tab
+    OWNER to iisiadmin;

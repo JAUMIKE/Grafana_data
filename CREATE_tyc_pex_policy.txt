@@ -1,0 +1,17 @@
+CREATE TABLE public.tyc_pex_policy
+(
+    policyid character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(120) COLLATE pg_catalog."default",
+    description character varying(200) COLLATE pg_catalog."default",
+    datatype numeric(1,0),
+    datastatus numeric(1,0),
+    updatetime timestamp without time zone,
+    CONSTRAINT tyc_pex_policy_pkey PRIMARY KEY (policyid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tyc_pex_policy
+    OWNER to iisiadmin;

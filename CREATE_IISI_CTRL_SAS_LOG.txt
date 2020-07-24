@@ -1,0 +1,40 @@
+CREATE TABLE public."IISI_CTRL_SAS_LOG"
+(
+    "ID" character varying(36) COLLATE pg_catalog."default" NOT NULL,
+    "ACTIVE_ID" character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    "DESCRIPTION" character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    "IS_ACTIVE" boolean NOT NULL,
+    "LOG_TIME" timestamp(6) without time zone NOT NULL,
+    "NAME" character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    "TRIGGER_TYPE" numeric(10,0) NOT NULL DEFAULT 0,
+    "TRIGGER_BY_CAR" numeric(10,0) NOT NULL DEFAULT 0,
+    "TRIGGER_BY_PERSON" numeric(10,0) NOT NULL DEFAULT 0,
+    "WITHOUT_TRIGGER" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_NUM" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_1" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_2" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_3" numeric(10,0) NOT NULL DEFAULT 0,
+    "CHANGE_GREEN_LIGHT" numeric(10,0) NOT NULL DEFAULT 0,
+    "START_WITH" numeric(10,0) NOT NULL DEFAULT 0,
+    "END_WITH" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_GREEN_FLASH_1" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_GREEN_FLASH_2" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_GREEN_FLASH_3" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_RED_1" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_RED_2" numeric(10,0) NOT NULL DEFAULT 0,
+    "PED_RED_3" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_1_YELLOW" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_2_YELLOW" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_3_YELLOW" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_1_RED" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_2_RED" numeric(10,0) NOT NULL DEFAULT 0,
+    "PHASE_3_RED" numeric(10,0) NOT NULL DEFAULT 0,
+    CONSTRAINT "IISI_CTRL_SAS_JSON_LOG_copy1_pkey" PRIMARY KEY ("ID", "LOG_TIME")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."IISI_CTRL_SAS_LOG"
+    OWNER to iisiadmin;

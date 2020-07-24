@@ -1,0 +1,39 @@
+
+CREATE TABLE public."IISI_DCTC_CROS_VOL_LOG"
+(
+    "DEVICE_ID" character varying(12) COLLATE pg_catalog."default" NOT NULL,
+    "LOG_TIME" timestamp(6) without time zone NOT NULL,
+    "A_TO_B" numeric(10,0) DEFAULT 0,
+    "A_TO_C" numeric(10,0) DEFAULT 0,
+    "A_TO_D" numeric(10,0) DEFAULT 0,
+    "A_TO_E" numeric(10,0) DEFAULT 0,
+    "B_TO_A" numeric(10,0) DEFAULT 0,
+    "B_TO_C" numeric(10,0) DEFAULT 0,
+    "B_TO_E" numeric(10,0) DEFAULT 0,
+    "B_TO_D" numeric(10,0) DEFAULT 0,
+    "C_TO_A" numeric(10,0) DEFAULT 0,
+    "C_TO_B" numeric(10,0) DEFAULT 0,
+    "C_TO_D" numeric(10,0) DEFAULT 0,
+    "C_TO_E" numeric(10,0) DEFAULT 0,
+    "D_TO_A" numeric(10,0) DEFAULT 0,
+    "D_TO_B" numeric(10,0) DEFAULT 0,
+    "D_TO_C" numeric(10,0) DEFAULT 0,
+    "D_TO_E" numeric(10,0) DEFAULT 0,
+    "E_TO_A" numeric(10,0) DEFAULT 0,
+    "E_TO_D" numeric(10,0) DEFAULT 0,
+    "E_TO_B" numeric(10,0) DEFAULT 0,
+    "E_TO_C" numeric(10,0) DEFAULT 0,
+    "A_TO__" numeric(10,0) DEFAULT 0,
+    "B_TO__" numeric(10,0) DEFAULT 0,
+    "C_TO__" numeric(10,0) DEFAULT 0,
+    "D_TO__" numeric(10,0) DEFAULT 0,
+    "E_TO__" numeric(10,0) DEFAULT 0,
+    CONSTRAINT "IISI_DCTC_CROS_GU_LOG_copy1_pkey" PRIMARY KEY ("DEVICE_ID", "LOG_TIME")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."IISI_DCTC_CROS_VOL_LOG"
+    OWNER to iisiadmin;

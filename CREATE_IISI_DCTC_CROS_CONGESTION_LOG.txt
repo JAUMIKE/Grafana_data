@@ -1,0 +1,12 @@
+CREATE TABLE public."IISI_DCTC_CROS_CONGESTION_LOG"
+(
+    "DEVICE_ID" character varying(12) COLLATE pg_catalog."default" NOT NULL,
+    "LOG_TIME" timestamp(6) without time zone NOT NULL,
+    "A" numeric(10,0) DEFAULT 0,
+    "B" numeric(10,0) DEFAULT 0,
+    "C" numeric(10,0) DEFAULT 0,
+    "D" numeric(10,0) DEFAULT 0,
+    "E" numeric(10,0) DEFAULT 0,
+    CONSTRAINT "IISI_DCTC_CROS_GU2_LOG_copy1_pkey" PRIMARY KEY ("DEVICE_ID", "LOG_TIME"),
+    CONSTRAINT "IISI_DCTC_CROS_GU2_LOG_copy1_LOG_TIME_DEVICE_ID_key" UNIQUE ("LOG_TIME", "DEVICE_ID")
+)

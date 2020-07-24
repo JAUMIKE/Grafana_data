@@ -1,0 +1,15 @@
+CREATE TABLE public.tyc_etag_path_traveltime
+(
+    path_id character varying(20) COLLATE pg_catalog."default",
+    travel_time numeric(38,0),
+    offset_travel_time numeric(38,0),
+    data_time timestamp without time zone,
+    updatetime timestamp without time zone
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tyc_etag_path_traveltime
+    OWNER to iisiadmin;

@@ -1,0 +1,25 @@
+CREATE TABLE public.tyc_tc_information
+(
+    deviceid character varying(7) COLLATE pg_catalog."default",
+    weekday numeric(1,0),
+    segmenttype numeric(1,0),
+    "time" character varying(5) COLLATE pg_catalog."default",
+    planid character varying(20) COLLATE pg_catalog."default",
+    segment numeric(1,0),
+    phaseid numeric(1,0),
+    cycletime numeric(5,0),
+    greentime numeric(4,0),
+    yellow numeric(2,0),
+    allred numeric(2,0),
+    pedred numeric(2,0),
+    pedflash numeric(2,0),
+    datastatus numeric(1,0),
+    updatetime timestamp without time zone
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tyc_tc_information
+    OWNER to iisiadmin;

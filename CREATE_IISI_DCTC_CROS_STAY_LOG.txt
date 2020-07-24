@@ -1,0 +1,21 @@
+CREATE TABLE public."IISI_DCTC_CROS_STAY_LOG"
+(
+    "DEVICE_ID" character varying(12) COLLATE pg_catalog."default" NOT NULL,
+    "LOG_TIME" timestamp without time zone NOT NULL,
+    "A" numeric(10,0) DEFAULT 0,
+    "B" numeric(10,0) DEFAULT 0,
+    "C" numeric(10,0) DEFAULT 0,
+    "D" numeric(10,0) DEFAULT 0,
+    "E" numeric(10,0) DEFAULT 0,
+    CONSTRAINT "IISI_DCTC_CROS_STAY_LOG_pkey" PRIMARY KEY ("DEVICE_ID", "LOG_TIME"),
+    CONSTRAINT "U_STAY_CAST" UNIQUE ("LOG_TIME", "DEVICE_ID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."IISI_DCTC_CROS_STAY_LOG"
+    OWNER to iisiadmin;
+
+GRANT ALL ON TABLE public."IISI_DCTC_CROS_STAY_LOG" TO iisiadmin WITH GRANT OPTION;

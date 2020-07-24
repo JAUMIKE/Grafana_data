@@ -1,0 +1,22 @@
+CREATE TABLE public.tyc_tc_ctri_information
+(
+    deviceid character varying(7) COLLATE pg_catalog."default" NOT NULL,
+    planid character varying(2) COLLATE pg_catalog."default" NOT NULL,
+    cycletime numeric(5,0),
+    phaseid numeric(1,0) NOT NULL,
+    greentime numeric(4,0),
+    yellow numeric(2,0),
+    allred numeric(2,0),
+    pedred numeric(2,0),
+    pedflash numeric(2,0),
+    updatetime timestamp without time zone,
+    datastatus numeric(1,0),
+    CONSTRAINT tyc_tc_ctri_information_pkey PRIMARY KEY (deviceid, planid, phaseid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.tyc_tc_ctri_information
+    OWNER to iisiadmin;
